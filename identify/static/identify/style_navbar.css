@@ -1,0 +1,7 @@
+#identify_navbar{
+    margin-left: 50px;
+}
+
+body{
+	background: url("{% static 'identify/hello.jpg' %}");
+}

@@ -1,0 +1,18 @@
+from keras.models import load_model
+
+body_part_classifier = load_model("cnns/mura_train87_val80.h5")
+body_part_classifier._make_predict_function()
+finger = load_model("cnns/finger_train56_val63.h5")
+finger._make_predict_function()
+elbow = load_model("cnns/elbow.h5")
+elbow._make_predict_function()
+humerus = load_model("cnns/humerus.h5")
+humerus._make_predict_function()	
+wrist = load_model("cnns/wrist.h5")
+wrist._make_predict_function()
+hand = load_model("cnns/hand.h5")
+hand._make_predict_function()
+forearm = load_model("cnns/forearm.h5")
+forearm._make_predict_function()
+shoulder = load_model("cnns/shoulder.h5")
+shoulder._make_predict_function()

@@ -1,0 +1,25 @@
+{% extends 'identify/navbar.html' %}
+{% load staticfiles %}
+
+<!--link type="text/css" rel="stylesheet" href="{% static 'identify/empty.css' %}"-->
+
+{%  block navbar %}
+
+<div style="text-align: center;" >
+    <h1>NOW PREDICTING!</h1><br/>
+    <img style="height: 300px; width: 300px; margin-bottom:10px" src={{ need.bone_image.url }}>
+    <br/>
+    <!--span style="font: 30px bold; text-transform: uppercase;">{{ ans2 }}</span-->
+    <br/>
+    <span style="font: 30px bold; text-transform: uppercase;">
+            {{ need.condition }}
+                        {% if need.condition == "positive" %}
+                            :{{ prob }}
+                        {% endif %}
+            </span	>
+    <br/>
+    <!--span style="font: 30px bold; text-transform: uppercase;">{{ prob }}</span-->
+
+</div>
+<!--h1><a href="{% url 'identify:index' %}">Return</a></h1-->
+{% endblock %}

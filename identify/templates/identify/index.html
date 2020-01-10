@@ -1,0 +1,37 @@
+
+{% extends 'identify/navbar.html' %}
+
+
+{% load staticfiles %}
+{% block navbar %}
+
+<style>
+    body{
+        background: url("{% static 'identify/hello.jpg' %}");
+        height: 100%;
+        min-height: 100%;
+    }
+
+    label{
+        color: white;
+    }
+</style>
+
+<div class="div" style="padding-top:130px; padding-left: 100px;">
+    <form action="{% url 'identify:index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label style="font-size: 20px;color: black; " >{{ field.label_tag }}</label >
+            <div class="input" name="pop">{{ field }}</div><br/>
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
